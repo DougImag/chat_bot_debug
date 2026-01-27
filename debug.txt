@@ -1,0 +1,29 @@
+TypeError: unsupported operand type(s)
+Cause fréquente : tentative d'opération entre types incompatibles.
+Solution : vérifier les types avec type() ou convertir explicitement.
+
+NameError: name 'x' is not defined
+Cause : variable non déclarée ou hors scope.
+Solution : vérifier l'ordre d'exécution et la portée des variables.
+
+IndexError: list index out of range
+Cause : accès à un index inexistant.
+Solution : vérifier la longueur de la liste avec len().
+
+KeyError
+Cause : clé absente dans un dictionnaire.
+Solution : utiliser dict.get() ou vérifier la clé avant l'accès.
+
+IndentationError
+Cause : indentation incorrecte.
+Solution : utiliser uniquement des espaces (4 par niveau).
+
+SyntaxError
+Cause : erreur de syntaxe (parenthèse, deux-points, etc.).
+Solution : relire la ligne indiquée par le traceback.
+
+Bonnes pratiques de débogage :
+- Lire le traceback de bas en haut
+- Isoler le bug avec print() ou logging
+- Utiliser pdb ou breakpoint()
+- Tester une chose à la fois
