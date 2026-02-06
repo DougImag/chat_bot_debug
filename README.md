@@ -19,7 +19,10 @@ Un **assistant de débogage Python** en ligne de commande, basé sur l’IA, uti
 
 ## 📁 Structure du projet
 
-- FAQ_chat_agent.py      
+- agent.py (contient toutes les variables globales du projet)
+- llm.py (fait les appels à l'API d'OpenRouteur)
+- RAG_chain.py (fait le retreiver des documents utiles)
+- app.py (créer un site en localhost)
 - debug.txt              
 - requirements.txt
 - README.md
@@ -37,3 +40,9 @@ Le projet utilise **OpenRouter** pour accéder gratuitement à des modèles de l
 4. Créer une nouvelle clé API
 5. Copier la clé (elle commence par `sk-or-...`)
 6. Mettre la clé dans le fichier .env
+
+## Comment lancer le projet
+
+```bash
+streamlit run app.py
+```
