@@ -6,6 +6,7 @@ from openai import OpenAI
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+from chromadb.config import Settings
 
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_core.prompts.chat import SystemMessagePromptTemplate
@@ -54,7 +55,7 @@ def retriever(docs):
         base_url=BASE_URL,
     )
 
-    vectordb = Chroma.from_documents(docs, embeddings)
+    vectordb = Chroma.from_documents(docs, embeddings, persist_directory="./chroma_db", client_settings=Settings(anonymized_telemetry=False))
     return vectordb
 
 def generate_response(retriev, user_input, docs):
