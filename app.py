@@ -1,6 +1,6 @@
 import streamlit as st
-
-import FAQ_chat_agent
+from llm import generate_response
+from RAG_chain import get_doc, retriever 
 
 st.set_page_config(page_title="Debug Agent", layout="wide")
 st.title("Debug Agent")
@@ -12,5 +12,5 @@ if st.button("Analyser"):
         st.warning("Veuillez entrer du code ou une erreur à analyser.")
     else:    
         with st.spinner("Analyse en cours..."):
-            response = FAQ_chat_agent.generate_response(FAQ_chat_agent.retriever(FAQ_chat_agent.get_doc()), user_input, FAQ_chat_agent.get_doc())
+            response = generate_response(retriever(get_doc()), user_input, get_doc())
             st.markdown(f"**Correction proposée :**\n\n{response}")
