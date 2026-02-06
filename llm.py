@@ -1,4 +1,4 @@
-from FAQ_chat_agent import LANGUAGE_MODEL, MODEL, ROLE
+from agent import LANGUAGE_MODEL, MODEL, ROLE
 
 def generate_response(retriev, user_input, docs):
     retriev.similarity_search(user_input)

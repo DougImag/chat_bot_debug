@@ -5,7 +5,7 @@ from chromadb.config import Settings
 
 from langchain_text_splitters import CharacterTextSplitter
 
-from FAQ_chat_agent import OPENAI_API_KEY, BASE_URL
+from agent import OPENAI_API_KEY, BASE_URL
 
 def get_doc():
     doc = TextLoader("./debug.txt").load()
